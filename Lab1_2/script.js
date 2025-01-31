@@ -73,7 +73,7 @@ window.onload = function () {
                 expr = (+a) / (+b);
                 break;
             case '%':
-                expr = (+a) / (+b/100);
+                expr = (+a) * (+b/100);
                 break;
         }
         return expr;
