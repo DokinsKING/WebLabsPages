@@ -72,6 +72,9 @@ window.onload = function () {
             case '/':
                 expr = (+a) / (+b);
                 break;
+            case '%':
+                expr = (+a) / (+b/100);
+                break;
         }
         return expr;
     }
@@ -101,10 +104,10 @@ window.onload = function () {
 
     document.getElementById("btn_op_percent").onclick = function () {
         if (!selectedOperation) {
-            a = (a / 100).toString();
+            selectedOperation = '%';
             upd_disp();
         } else {
-            b = (b / 100).toString();
+            selectedOperation = '%';
             upd_disp();
         }
     };
