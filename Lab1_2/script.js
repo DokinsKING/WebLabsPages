@@ -76,7 +76,7 @@ window.onload = function () {
                 expr = (+a) * (+b/100);
                 break;
         }
-        return expr;
+        return expr.toFixed(2);
     }
 
     document.getElementById("btn_op_mult").onclick = function () { 
