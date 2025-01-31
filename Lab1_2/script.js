@@ -83,8 +83,8 @@ window.onload = function () {
         if(a !== '' && b !== '' && selectedOperation !== '')
         {
             expressionResult = getEqual(selectedOperation,a,b)
+            a = expressionResult.toString()
             b = ''
-            selectedOperation = ''
             upd_disp();
         }
         setOperation('x'); };
@@ -92,8 +92,8 @@ window.onload = function () {
         if(a !== '' && b !== '' && selectedOperation !== '')
         {
             expressionResult = getEqual(selectedOperation,a,b)
+            a = expressionResult.toString()
             b = ''
-            selectedOperation = ''
             upd_disp();
         }
         setOperation('+'); };
@@ -101,8 +101,8 @@ window.onload = function () {
         if(a !== '' && b !== '' && selectedOperation !== '')
         {
             expressionResult = getEqual(selectedOperation,a,b)
+            a = expressionResult.toString()
             b = ''
-            selectedOperation = ''
             upd_disp();
         }
         setOperation('-'); };
@@ -110,8 +110,8 @@ window.onload = function () {
         if(a !== '' && b !== '' && selectedOperation !== '')
         {
             expressionResult = getEqual(selectedOperation,a,b)
+            a = expressionResult.toString()
             b = ''
-            selectedOperation = ''
             upd_disp();
         }
         setOperation('/');};
@@ -137,10 +137,12 @@ window.onload = function () {
     document.getElementById("btn_op_percent").onclick = function () {
         if(a !== '' && b !== '' && selectedOperation !== '')
         {
-            expressionResult = getEqual(selectedOperation,a,b)
-            b = ''
-            selectedOperation = ''
-            upd_disp();
+            a = expressionResult.toString();
+            last.push(selectedOperation);
+            last.push(b);
+            b = '';
+            selectedOperation = null;
+            outputElement.innerHTML = a;
         }
         if (!selectedOperation) {
             selectedOperation = '%';
