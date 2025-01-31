@@ -79,10 +79,42 @@ window.onload = function () {
         return expr;
     }
 
-    document.getElementById("btn_op_mult").onclick = function () { setOperation('x'); };
-    document.getElementById("btn_op_plus").onclick = function () { setOperation('+'); };
-    document.getElementById("btn_op_minus").onclick = function () { setOperation('-'); };
-    document.getElementById("btn_op_div").onclick = function () { setOperation('/'); };
+    document.getElementById("btn_op_mult").onclick = function () { 
+        if(a !== '' && b !== '' && selectedOperation !== '')
+        {
+            expressionResult = getEqual(selectedOperation,a,b)
+            b = ''
+            selectedOperation = ''
+            upd_disp();
+        }
+        setOperation('x'); };
+    document.getElementById("btn_op_plus").onclick = function () { 
+        if(a !== '' && b !== '' && selectedOperation !== '')
+        {
+            expressionResult = getEqual(selectedOperation,a,b)
+            b = ''
+            selectedOperation = ''
+            upd_disp();
+        }
+        setOperation('+'); };
+    document.getElementById("btn_op_minus").onclick = function () { 
+        if(a !== '' && b !== '' && selectedOperation !== '')
+        {
+            expressionResult = getEqual(selectedOperation,a,b)
+            b = ''
+            selectedOperation = ''
+            upd_disp();
+        }
+        setOperation('-'); };
+    document.getElementById("btn_op_div").onclick = function () { 
+        if(a !== '' && b !== '' && selectedOperation !== '')
+        {
+            expressionResult = getEqual(selectedOperation,a,b)
+            b = ''
+            selectedOperation = ''
+            upd_disp();
+        }
+        setOperation('/');};
 
     document.getElementById("btn_op_clear").onclick = function () {
         a = '';
@@ -103,6 +135,13 @@ window.onload = function () {
     };
 
     document.getElementById("btn_op_percent").onclick = function () {
+        if(a !== '' && b !== '' && selectedOperation !== '')
+        {
+            expressionResult = getEqual(selectedOperation,a,b)
+            b = ''
+            selectedOperation = ''
+            upd_disp();
+        }
         if (!selectedOperation) {
             selectedOperation = '%';
             upd_disp();
