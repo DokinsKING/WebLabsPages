@@ -158,7 +158,14 @@ window.onload = function () {
             a = a.slice(0, -1);
             upd_disp();
         } else {
-            b = b.slice(0, -1);
+            if(b === '')
+            {
+                selectedOperation = ''
+            }
+            else
+            {
+                b = b.slice(0, -1);
+            }
             upd_disp();
         }
     };
@@ -227,7 +234,8 @@ document.getElementById("btn_op_factorial").onclick = function() {
     };
 
     document.getElementById("btn_op_change_result_color").onclick = function () {
-        outputElement.style.color = outputElement.style.color === 'red' ? 'black' : 'red';
+        outputElement.style.backgroundColor = outputElement.style.backgroundColor === 'black' ? 'white' : 'black';
+        outputElement.style.color = outputElement.style.color === 'white' ? 'black' : 'white';
     };
 
     document.getElementById("btn_op_equal").onclick = function () 
